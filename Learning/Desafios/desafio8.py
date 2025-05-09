@@ -1,7 +1,7 @@
 import os
 import json
 
-caminhoArquivo = r"C:\\Users\\luigg\\learning-python\\Learning\\\\Dados\\listaExercicio8.json"
+CAMINHO_DO_ARQUIVO = r"C:\\Users\\luigg\\learning-python\\Learning\\\\Dados\\listaExercicio8.json"
 
 
 def listar(tarefas):  # Essa função realiza apenas os prints da lista de tarefas
@@ -63,7 +63,7 @@ def load_list(caminho_arquivo):
         return json.load(arquivo)
 
 
-tarefas = load_list(caminhoArquivo)
+tarefas = load_list(CAMINHO_DO_ARQUIVO)
 tarefas_refazer = []
 
 while True:
@@ -76,7 +76,7 @@ while True:
     elif tarefa == 'desfazer':
         desfazer(tarefas, tarefas_refazer)
         listar(tarefas)
-        salva_tarefas(tarefas, caminhoArquivo)
+        salva_tarefas(tarefas, CAMINHO_DO_ARQUIVO)
         continue
 
     elif tarefa == 'refazer':
@@ -91,5 +91,5 @@ while True:
     else:
         adicionar(tarefa, tarefas)
         listar(tarefas)
-        salva_tarefas(tarefas, caminhoArquivo)
+        salva_tarefas(tarefas, CAMINHO_DO_ARQUIVO)
         continue
