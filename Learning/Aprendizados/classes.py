@@ -8,11 +8,14 @@ class Pessoa:
         self.idade = idade
 
 
-p1 = Pessoa("Luggi", 18)
-p2 = Pessoa("Gabriel", 15)
-p3 = Pessoa("Sergio", 23)
+with open(CAMINHO_AQUIVO, "r") as arquivo:
+    dados = json.load(arquivo)
 
-dados = [vars(p1), vars(p2), vars(p3)]
 
-with open(CAMINHO_AQUIVO, "w") as arquivo:
-    json.dump(dados, arquivo)
+# p1 = Pessoa(**dados[0])
+# p2 = Pessoa(**dados[1])
+# p3 = Pessoa(**dados[2])
+
+# print(p1.nome, p1.idade)
+# print(p2.nome, p2.idade)
+# print(p3.nome, p3.idade)
